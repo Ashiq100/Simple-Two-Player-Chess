@@ -21,14 +21,14 @@ output = 1 ;
 
 if (lbg == 1)
     p(lx,ly) = 101 ; 
-    set(handles.(sprintf('pb%d',last)) , 'Cdata' , imread('101.png')) ;
+    set(handles.(sprintf('pb%d',last)) , 'Cdata' , imread('images/101.png')) ;
 else
     p(lx,ly) = 202 ; 
-    set(handles.(sprintf('pb%d',last)) , 'Cdata' , imread('202.png')) ;
+    set(handles.(sprintf('pb%d',last)) , 'Cdata' , imread('images/202.png')) ;
 end
 
 cdat = 100*col + 10*piece + mod((cx+cy),2) + 1 ; 
 p(cx,cy) = cdat;
-set(handles.(sprintf('pb%d',cur)) , 'Cdata' , imread(sprintf('%d.png',cdat)) ) ;
+set(handles.(sprintf('pb%d',cur)) , 'Cdata' , imread(sprintf('images/%d.png',cdat)) ) ;
 return p;
 end

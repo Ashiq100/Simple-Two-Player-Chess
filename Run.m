@@ -84,7 +84,8 @@ show_move = 0;
 % initialzed picture 
 for i = 1:8
     for j = 1:8
-        s = num2str(board_state(i,j)) ; 
+        s = 'images/';
+        s = strcat(s, num2str(board_state(i,j)));
         s = strcat(s,'.png') ; 
         bg = imread(s);
         set(handles.(sprintf('pb%d%d',i,j)) , 'CData' , bg) ; 
@@ -92,7 +93,7 @@ for i = 1:8
 end
 
 % set white king on the who plays button
-set(handles.who, 'CData' , imread('162.png'));
+set(handles.who, 'CData' , imread('images/162.png'));
 
 % Update handles structure
 guidata(hObject, handles);

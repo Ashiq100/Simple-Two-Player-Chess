@@ -5,8 +5,9 @@ lbg = BG(ldat);
 cbg = BG(cdat); 
 pc = Piece(ldat); 
 
-board_state(cx,cy) = 100*Col(ldat) + 10*Piece(ldat) + BG(cdat); 
-s = num2str(board_state(cx,cy)); 
+board_state(cx,cy) = 100*Col(ldat) + 10*Piece(ldat) + BG(cdat);
+s = 'images/';
+s = strcat(s, num2str(board_state(cx,cy))); 
 s = strcat(s,'.png'); 
 bg = imread(s);
 set(handles.(sprintf('pb%d%d',cx,cy)) , 'CData' , bg) ;
@@ -15,7 +16,9 @@ if (BG(ldat) == 1)
 else 
     board_state(lx,ly) = 202 ;
 end
-s = num2str(board_state(lx,ly)) ; 
+
+s = 'images/';
+s = strcat(s, num2str(board_state(lx,ly)));
 s = strcat(s,'.png') ; 
 bg = imread(s);
 set(handles.(sprintf('pb%d%d',lx,ly)) , 'CData' , bg);
